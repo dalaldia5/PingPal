@@ -24,3 +24,60 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.floating-anim {
+  animation: float 6s ease-in-out infinite;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-glow {
+  box-shadow: 0 0 80px -10px #38bdf8, 0 0 120px -30px #818cf8;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(56, 189, 248, 0);
+  }
+}
+
+.btn-pulse {
+  animation: pulse 2.5s infinite;
+}
+
+@keyframes background-pan {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient {
+  background-size: 200% 200%;
+  animation: background-pan 10s ease-in-out infinite;
+}
