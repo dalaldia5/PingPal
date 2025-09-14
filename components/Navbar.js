@@ -1,8 +1,11 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import { UserButton } from "@clerk/nextjs";
+// import { useUser } from "@clerk/nextjs";
 
 const Navbar = () => {
+//   const user = useUser();
   return (
     <nav
       className="sticky top-0 z-50 bg-slate-950/70 backdrop-blur-lg border-b border-transparent 
