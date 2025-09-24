@@ -15,7 +15,7 @@ import "stream-chat-react/dist/css/v2/index.css";
 import React from "react";
 
 const ChatForum = ({ clerkUser, slug }) => {
-  const apiKey = "eeqfxbfs4hvb";
+  const apiKey = process.env.NEXT_PUBLIC_STREAM_API_KEY;
   // console.log('<<<<clerkUser', clerkUser,slug);
 
   // Only call the hook at top level, pass tokenOrProvider null if token not ready
