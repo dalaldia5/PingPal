@@ -16,6 +16,7 @@ import React from "react";
 
 const ChatForum = ({ clerkUser, slug }) => {
   const apiKey = "eeqfxbfs4hvb";
+  // console.log('<<<<clerkUser', clerkUser,slug);
 
   // Only call the hook at top level, pass tokenOrProvider null if token not ready
   const client = useCreateChatClient({
@@ -57,7 +58,19 @@ const ChatForum = ({ clerkUser, slug }) => {
     initChannel();
   }, [client, slug, clerkUser?.id]);
 
-  if (!clerkUser?.token) return <div>Loading user token...</div>;
+  if (!clerkUser?.token) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+        <button className="flex items-center gap-2 rounded-lg bg-neutral-900 px-4 py-2 text-white shadow-md hover:bg-red-700 transition h-25 w-72">
+          <span className="relative flex size-3">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"></span>
+            <span className="relative inline-flex size-3 rounded-full bg-red-500"></span>
+          </span>
+          Error
+        </button>
+      </div>
+    );
+  }
   if (!client) return <div>Setting up chat client...</div>;
   if (!channel) return <div>Loading chat channel...</div>;
 

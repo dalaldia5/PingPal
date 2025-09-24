@@ -51,7 +51,7 @@ const Forums = () => {
   return (
     <div
       className="min-h-screen w-full py-28 px-6
-      bg-gradient-to-br from-[#0a0f1c] via-[#121826] to-[#1c1f2b]"
+      bg-gradient-to-br from-[#0a0f1c] via-[#121826] to-[#1c1f2b] animated-gradient"
     >
       {/* Title */}
       <h1
@@ -59,7 +59,7 @@ const Forums = () => {
         bg-gradient-to-r from-sky-400 via-indigo-400 to-purple-500 
         bg-clip-text text-transparent 
         drop-shadow-[0_0_25px_rgba(56,189,248,0.5)] 
-        tracking-tight"
+        tracking-tight btn-pulse"
       >
         Discussion Forums
       </h1>

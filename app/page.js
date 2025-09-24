@@ -45,20 +45,20 @@ export default function Home() {
           </div>
 
           {/* Right Illustration */}
-          <div className="relative p-4 rounded-3xl">
+          <div className="relative p-4 rounded-3xl hero-glow">
             <Image
               src="https://static.vecteezy.com/system/resources/previews/003/483/463/non_2x/chatting-concept-online-talking-speak-conversation-dialog-vector.jpg"
               alt="PingPal Illustration"
               width={500}
               height={400}
-              className="rounded-2xl shadow-lg"
+              className="rounded-2xl shadow-lg floating-anim"
             />
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section id="features" className="px-6 py-24 bg-slate-950 relative">
+      <section id="features" className="px-6 py-24 bg-gradient-to-br from-slate-950 to-slate-800 animated-gradient relative">
         <div className="mx-auto max-w-6xl text-center">
           <h2 className="text-4xl font-extrabold tracking-tight bg-gradient-to-r from-sky-400 via-purple-400 to-green-400 bg-clip-text text-transparent">
             Features that make chatting fun ✨
@@ -103,7 +103,7 @@ export default function Home() {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="px-6 py-24 bg-slate-900 relative">
+      <section id="pricing" className="px-6 py-24 bg-gradient-to-br from-slate-900 to-slate-700 animated-gradient relative">
         <div className="mx-auto max-w-6xl text-center">
           <h2 className="text-4xl font-extrabold tracking-tight bg-gradient-to-r from-sky-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
             Simple, transparent pricing 💎
