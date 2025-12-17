@@ -167,7 +167,7 @@ const Forums = () => {
         <div className="text-center mt-20">
           <div className="card-premium p-12 max-w-2xl mx-auto">
             <h3 className="text-3xl font-bold text-white mb-4">
-              Don't see your topic?
+              Don&apos;t see your topic?
             </h3>
             <p className="text-gray-300 mb-8">
               Request a new forum category or start a discussion in our general
