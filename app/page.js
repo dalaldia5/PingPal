@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 
 export const metadata = {
-  title: "Home - PingPal",
+  title: "Home - PingPal-v2",
   description: "PingPal helps you chat with your loved ones seamlessly.",
 };
 
