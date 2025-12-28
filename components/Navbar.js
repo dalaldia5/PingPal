@@ -19,9 +19,9 @@ const Navbar = () => {
         {/* Nav Links */}
         <div className="hidden md:flex items-center space-x-1">
           {[
-            { href: "/", label: "Home", icon: "🏠" },
-            { href: "/forums", label: "Forums", icon: "💬" },
-            { href: "/chat", label: "Chat", icon: "🚀" },
+            { href: "/", label: "Home" },
+            { href: "/forums", label: "Forums" },
+            { href: "/chat", label: "Chat" },
           ].map((link) => (
             <Link
               key={link.href}
@@ -29,7 +29,6 @@ const Navbar = () => {
               className="relative px-4 py-2 rounded-lg text-white font-medium transition-all duration-300 group hover:bg-white/10"
             >
               <span className="flex items-center space-x-2">
-                <span className="text-sm">{link.icon}</span>
                 <span>{link.label}</span>
               </span>
 

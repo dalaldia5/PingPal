@@ -114,7 +114,7 @@ export default function Home() {
           <div className="text-center mb-20">
             <div className="inline-flex items-center px-6 py-3 rounded-full glass-effect mb-6">
               <span className="text-sm font-semibold text-white">
-                ✨ Premium Features
+                Premium Features
               </span>
             </div>
 
