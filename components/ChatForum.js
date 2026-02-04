@@ -21,8 +21,7 @@ const ChatForum = ({ clerkUser, slug }) => {
   // Only call the hook at top level, pass tokenOrProvider null if token not ready
   const client = useCreateChatClient({
     apiKey,
-    tokenOrProvider: clerkUser?.id || null,
-        // tokenOrProvider: clerkUser?.token || null,
+    tokenOrProvider: clerkUser?.token || null,
 
     userData: clerkUser
       ? {
