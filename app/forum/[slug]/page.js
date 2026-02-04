@@ -1,5 +1,5 @@
 import ChatForum from "@/components/ChatForum";
-import { currentUser } from "@clerk/nextjs/server";
+import { clerkClient, currentUser } from "@clerk/nextjs/server";
 
 export default async function Page({ params }) {
   const user = await currentUser();
