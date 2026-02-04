@@ -32,23 +32,27 @@ export async function POST(request) {
     "Web Development",
     "Cybersecurity",
   ];
-  slugs.forEach(async (slug) => {
-    const channelId = decodeURIComponent(slug).replace(
-      /[^A-Za-z0-9_!\-]/g,
-      "-"
-    );
-    const channelName =
-      decodeURIComponent(slug).replace(/[-_]/g, " ").toUpperCase() +
-      " DISCUSSION ROOM";
-    const channel = serverClient.channel("messaging", channelId, {
-      name: channelName,
-      image: `https://getstream.io/random_png/?name=${slug}`,
-      members: [user.data.id],
-      created_by_id: user.data.id,
-    });
-    await channel.create();
-    channel.addMembers([user.data.id]);
-  });
+
+  // Use Promise.all to wait for all channels to be created
+  await Promise.all(
+    slugs.map(async (slug) => {
+      const channelId = decodeURIComponent(slug).replace(
+        /[^A-Za-z0-9_!\-]/g,
+        "-",
+      );
+      const channelName =
+        decodeURIComponent(slug).replace(/[-_]/g, " ").toUpperCase() +
+        " DISCUSSION ROOM";
+      const channel = serverClient.channel("messaging", channelId, {
+        name: channelName,
+        image: `https://getstream.io/random_png/?name=${slug}`,
+        created_by_id: user.data.id,
+      });
+      await channel.create();
+      await channel.addMembers([user.data.id]);
+    }),
+  );
+
   return Response.json({
     message: "Hello from the protected route!",
   });

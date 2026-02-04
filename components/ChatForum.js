@@ -40,20 +40,28 @@ const ChatForum = ({ clerkUser, slug }) => {
 
     const channelId = decodeURIComponent(slug).replace(
       /[^A-Za-z0-9_!\-]/g,
-      "-"
+      "-",
     );
     const channelName =
       decodeURIComponent(slug).replace(/[-_]/g, " ").toUpperCase() +
       " DISCUSSION ROOM";
 
     const initChannel = async () => {
-      const ch = client.channel("messaging", channelId, {
-        name: channelName,
-        image: `https://getstream.io/random_png/?name=${slug}`,
-        members: [clerkUser.id],
-      });
-      await ch.watch();
-      setChannel(ch);
+      try {
+        // First, ensure user is added to channel on the server
+        await fetch("/api/join-channel", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ slug }),
+        });
+
+        // Now get the channel
+        const ch = client.channel("messaging", channelId);
+        await ch.watch();
+        setChannel(ch);
+      } catch (error) {
+        console.error("Error initializing channel:", error);
+      }
     };
 
     initChannel();

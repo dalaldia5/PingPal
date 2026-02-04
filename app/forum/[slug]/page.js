@@ -3,6 +3,7 @@ import { clerkClient, currentUser } from "@clerk/nextjs/server";
 
 export default async function Page({ params }) {
   const user = await currentUser();
+  console.log("<<<USEER",user);
   const slug = (await params).slug;
   // console.log("<<<<<",user);
   return (
